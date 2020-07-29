@@ -6,25 +6,30 @@ public class CyclesGoldenFibo {
     public static boolean containsDigit(int number, int digit) {
         if (number == digit) return true;
         else return false;
+        // Прошу написать правильный алгоритм.
     }
-
-    public static int fiboNumber(int n) {
-        if (n == 1 || n == 2) {
-            return 1;
-        } else {
-            return fiboNumber(n - 1) + fiboNumber(n - 2);
+        public static int fiboNumber(int n){
+            if (n == 1 || n == 2) {
+                return 1;
+            } else {
+                return fiboNumber(n - 1) + fiboNumber(n - 2);
+            }
         }
-    }
 
     public static boolean isGoldenTriangle(int a, int b, int c) {
-        if (a / c == K_GOLD && a == b) return true;
-        if (a / b == K_GOLD && a == c) return true;
-        if (c / a == K_GOLD && c == b) return true;
+        double v = a; double n = b; double m = c;
+        if (((v == n) & ((1.61703 < v / m) & (v / m < 1.61903)))) return true;
+        if (((v == m) & ((1.61703 < v / n) & (v / n < 1.61903)))) return true;
+        if (((m == n) & ((1.61703 < m / v) & (m / v < 1.61903)))) return true;
+
         else return false;
     }
 
 
     public static void main(String[] args) {
+        System.out.println(containsDigit(12345, 1));
+        System.out.println(isGoldenTriangle(55, 55, 34));
+
         int a = 0, b = 1, c;
         for (int i = 0; i <= 15; i++) {
             c = a + b;
