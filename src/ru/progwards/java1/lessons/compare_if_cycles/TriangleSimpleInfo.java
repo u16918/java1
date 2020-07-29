@@ -5,9 +5,10 @@ public class TriangleSimpleInfo {
         if (a <= b && b < c) return c;
         if (b <= c && c < a) return a;
         if (a <= c && c < b) return b;
-        if (a > b && a >= c) return a;
-        if (b > a && b >= c) return b;
-        if (c > a && c >= b) return c;
+        if (a >= b && a > c) return a;
+        if (b >= a && b >= c) return b;
+        if (c >= a && c > b) return c;
+        if (a == b && b == c) return a;
         else return 0;
     }
     public static int minSide(int a, int b, int c){
@@ -17,6 +18,7 @@ public class TriangleSimpleInfo {
         if (a > b && b <= c) return b;
         if (b > c && c <= a) return c;
         if (c > a && a <= b) return a;
+        if (a == b && b == c) return a;
         else return 0;
     }
     public static boolean isEquilateralTriangle(int a, int b, int c){
@@ -25,7 +27,7 @@ public class TriangleSimpleInfo {
     }
 
     public static void main(String[] args) {
-        System.out.println(maxSide(5, 7, 7));
+        System.out.println(maxSide(10, 10, 8));
         System.out.println(minSide(5, 2, 2));
         System.out.println(isEquilateralTriangle(5, 5, 5));
     }
