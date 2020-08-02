@@ -18,13 +18,13 @@ public class Animal {
     public String toString(){
         return "I am " + getKind() + ", " + "eat " + getFoodKind();
     }
-    public double getWeight(double weight){
+    public double getWeight(){
         return weight;
     }
     public double getFoodCoeff(){ return 0.02; }
 
     public double calculateFoodWeight(){
-        return getWeight(weight) * getFoodCoeff();
+        return getWeight() * getFoodCoeff();
     }
     public String toStringFull(){
         return "I am " + getKind() + ", " + "eat " + getFoodKind() + " " + calculateFoodWeight();
