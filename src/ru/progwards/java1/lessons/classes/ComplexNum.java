@@ -1,37 +1,39 @@
 package ru.progwards.java1.lessons.classes;
 
 public class ComplexNum {
- int a, b, i, z, z1, c, d;
+    private static int num;
+    int a, b, z;
+   int c, d, z1;
     public ComplexNum(int a, int b){
-        int z = a + b * i;
-        int z1 = c + d * i;
+        this.a = a; this.b = b; this.z = a + b;
+        this.c = a; this.d = b; this.z1 = c + d;
+
     }
     public String toString(){
-        return "" + a +  " + " + b * i;
+
+        return "" + a +  " + " + b + "i";
     }
     public ComplexNum add(ComplexNum num){
-        z = z + z1;
-        z = (a + c) + ((b + d) * i);
+        ComplexNum.num = a + b;
+
         return num;
     }
     public ComplexNum sub(ComplexNum num){
-        z = z - z1;
-        z = (a - c) + (b - d) * i;
+       z = a - b;
+
         return num;
     }
     public ComplexNum mul(ComplexNum num){
-        z = z * z1;
-        z = (a * c - b * d) + (b * c + a * d) * i;
+       z = a * b;
         return num;
     }
     public ComplexNum div(ComplexNum num){
-        z = z / z1;
-        z = (a * c + b * d)/(c * c+d * d) + ((b * c - a * d)/(c * c+d * d)) * i;
+       z = a / b;
         return num;
     }
 
     public static void main(String[] args) {
-
+        System.out.println(new ComplexNum(1, 1));
     }
 }
 

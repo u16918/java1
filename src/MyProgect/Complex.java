@@ -1,52 +1,93 @@
 package MyProgect;
 
-class Complex {
-    // Объявление переменных
-    int real, imaginary;
-    // Пустой конструктор
-    Complex()
-    {
+class Complex  {
+    static int counter=0;
+    double Re, Im;
+    int  number;
+    Complex Sum(Complex obj){
+        System.out.println("Суммирование вашего числа с числом № "+obj.number);
+        Complex tmp = new Complex();
+        tmp.Re=Re+obj.Re;
+        tmp.Im=Im+obj.Im;
+
+        return tmp;
     }
-    // Конструктор для принятия
-    // реальная и мнимая часть
-    Complex(int tempReal, int tempImaginary)
-    {
-        real = tempReal;
-        imaginary = tempImaginary;
+
+    Complex Divide(Complex obj) {
+        System.out.println("Деление вашего числа на число № "+obj.number);
+        if(obj.Im==0||obj.Re==0){
+            throw new ArithmeticException();
+
+        }
+        else{
+            Complex tmp = new Complex();
+            tmp.Re=obj.Re/Re;
+            tmp.Im=obj.Im/Im;
+            return tmp;}
+
     }
-    // Определение метода addComp ()
-    // для сложения двух комплексных чисел
-    Complex addComp(Complex C1, Complex C2)
-    {
-        // создаем временную переменную
-        Complex temp = new Complex();
-        // добавляем вещественную часть комплексных чисел
-        temp.real = C1.real + C2.real;
-        // добавление мнимой части комплексных чисел
-        temp.imaginary = C1.imaginary + C2.imaginary;
-        // возвращаем сумму
-        return temp;
+
+
+    Complex Multi(Complex obj){
+        System.out.println("Умножение вашего числа на число № "+obj.number);
+        Complex tmp=new Complex();
+        tmp.Im=Im*obj.Re+Re*obj.Im;
+        tmp.Re=Re*obj.Re-Im*obj.Im;
+        return tmp;
     }
-    // Определение метода subtractComp ()
-    // для вычитания двух комплексных чисел
-    Complex subtractComp(Complex C1, Complex C2)
-    {
-        // создаем временную переменную
-        Complex temp = new Complex();
-        // вычитаем вещественную часть комплексных чисел
-        temp.real = C1.real - C2.real;
-        // вычитаем мнимую часть комплексных чисел
-        temp.imaginary = C1.imaginary - C2.imaginary;
-        // возвращаем разницу
-        return temp;
+
+
+
+    void show(Complex obj){
+        System.out.println("Число № "+number);
+        System.out.println("Действительная часть = "+Re);
+        System.out.println("Мнимая часть = "+Im);
     }
-    // Функция для печати комплексного номера
-    void printComplexNumber()
-    {
-        System.out.println("Complex number: "
-                + real + " + "
-                + imaginary + "i");
+    Complex() {
+        counter++;
+        number=counter;
+        Re=0;
+        Im=0;
+    }
+    Complex(double x){
+        counter++;
+        number=counter;
+        Re=x;
+        Im=0;
+    }
+
+    Complex(Complex obj){
+        counter++;
+        number=counter;
+        Re=obj.Re;
+        Im=obj.Im;
+    }
+    @Override
+    public String toString() {
+        return "Complex{" + "Re=" + Re + ", Im=" + Im + ", number=" + number + '}';
+    }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Complex other = (Complex) obj;
+        if (Double.doubleToLongBits(this.Re) != Double.doubleToLongBits(other.Re)) {
+            return false;
+        }
+        if (Double.doubleToLongBits(this.Im) != Double.doubleToLongBits(other.Im)) {
+            return false;
+        }
+        if (this.number != other.number) {
+            return false;
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+
     }
 }
-
-
