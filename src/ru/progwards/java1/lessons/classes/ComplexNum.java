@@ -16,22 +16,22 @@ public ComplexNum add(ComplexNum num) { // (a + c) + (b + d)i
     return new ComplexNum(num.a, num.b);
         }
 public ComplexNum sub(ComplexNum num) { // (a - c) + (b - d)i
-    num.a -= a;
-    num.b -= b;
+    num.a = a - num.a;
+    num.b = b - num.b;
     return new ComplexNum(num.a, num.b);
         }
 public ComplexNum mul(ComplexNum num) {   // (a*c - b*d) + (b*c + a*d)i
-    num.a -= a * num.a;
-    num.b += b * num.b;
+    num.a = a * num.a - b * num.b;
+    num.b = b * num.a + a * num.b;
     return new ComplexNum(num.a, num.b);
         }
 public ComplexNum div(ComplexNum num){ // (a*c + b*d)/(c*c+d*d) + ((b*c - a*d)/(c*c+d*d))i
     num.a = (a * num.a + b * num.b) / (num.a * num.a + num.b * num.b);
-    num.b = (b * num.a - a * num.b) / (num.a *+ num.b * num.b);
+    num.b = (b * num.a - a * num.b) / (num.a * num.a + num.b * num.b);
     return new ComplexNum(num.a, num.b);
 }
     public static void main(String[] args) {
-        System.out.println(new ComplexNum(1000, 1000).div(new ComplexNum(100, 100)));
+        System.out.println(new ComplexNum(1000, 1012).div(new ComplexNum(100, 88)).toString());
     }
 }
 
