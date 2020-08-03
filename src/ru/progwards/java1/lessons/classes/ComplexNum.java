@@ -1,39 +1,37 @@
 package ru.progwards.java1.lessons.classes;
 
 public class ComplexNum {
-    private static int num;
-    int a, b, z;
-   int c, d, z1;
-    public ComplexNum(int a, int b){
-        this.a = a; this.b = b; this.z = a + b;
-        this.c = a; this.d = b; this.z1 = c + d;
-
-    }
-    public String toString(){
-
-        return "" + a +  " + " + b + "i";
-    }
-    public ComplexNum add(ComplexNum num){
-        ComplexNum.num = a + b;
-
-        return num;
-    }
-    public ComplexNum sub(ComplexNum num){
-       z = a - b;
-
-        return num;
-    }
-    public ComplexNum mul(ComplexNum num){
-       z = a * b;
-        return num;
-    }
-    public ComplexNum div(ComplexNum num){
-       z = a / b;
-        return num;
-    }
-
+        int a;
+        int b;
+public ComplexNum(int a, int b){
+        this.a = a;
+        this.b = b;
+        }
+public String toString(){
+        return a+"+"+b+"i";
+        }
+public ComplexNum add(ComplexNum num) { // (a + c) + (b + d)i
+    num.a += a;
+    num.b += b;
+    return new ComplexNum(num.a, num.b);
+        }
+public ComplexNum sub(ComplexNum num) { // (a - c) + (b - d)i
+    num.a -= a;
+    num.b -= b;
+    return new ComplexNum(num.a, num.b);
+        }
+public ComplexNum mul(ComplexNum num) {   // (a*c - b*d) + (b*c + a*d)i
+    num.a -= a * num.a;
+    num.b += b * num.b;
+    return new ComplexNum(num.a, num.b);
+        }
+public ComplexNum div(ComplexNum num){ // (a*c + b*d)/(c*c+d*d) + ((b*c - a*d)/(c*c+d*d))i
+    num.a = (a * num.a + b * num.b) / (num.a * num.a + num.b * num.b);
+    num.b = (b * num.a - a * num.b) / (num.a *+ num.b * num.b);
+    return new ComplexNum(num.a, num.b);
+}
     public static void main(String[] args) {
-        System.out.println(new ComplexNum(1, 1));
+        System.out.println(new ComplexNum(1000, 1000).div(new ComplexNum(100, 100)));
     }
 }
 
