@@ -4,9 +4,15 @@ public class CyclesGoldenFibo {
     public static final double K_GOLD = 1.61803;
 
     public static boolean containsDigit(int number, int digit) {
-        if (number == digit) return true;
-        else return false;
-        // Прошу написать правильный алгоритм.
+        int i;
+        for (i = 0; number > 0;) {
+            i = number % 10;
+            if (i == digit) return true;
+            else {
+                i = number / 10;
+            }
+        }
+        return false;
     }
         public static int fiboNumber(int n){
             if (n == 1 || n == 2) {
