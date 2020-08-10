@@ -5,13 +5,32 @@ import java.util.Arrays;
      public class DIntArray {
         private int[] arrayNum;
 
+
          public void add(int num){
-             int[] arrayNumCopy = Arrays. copyOf(arrayNum, arrayNum.length + num);
-    }
+
+             int[] arrayNum1 = Arrays. copyOf(arrayNum, arrayNum.length + num);
+         }
          public void atInsert(int pos, int num){
-             int[] arrayNumCopy1 = Arrays. copyOf(arrayNum, arrayNum.length/2 + num);
+
+             int[] arrayNum1 = Arrays. copyOf(arrayNum, arrayNum.length/2 + pos);
+
+              arrayNum1[pos] = num;
+         }
+         public void atDelete(int arrayNum1[], int pos) {
+
+                 for(int i = pos; i < (arrayNum1.length - 1); i++){
+                     arrayNum1[i] = arrayNum1[i + 1];
+                 }
+             }
+
+
+
+         public static void main(String[] args) {
+             int[] arrayNum = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+
 
          }
+
 }
 
 /*

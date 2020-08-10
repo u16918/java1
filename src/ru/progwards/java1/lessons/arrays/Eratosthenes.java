@@ -4,42 +4,41 @@ import java.util.Arrays;
 
 public class Eratosthenes {
     private boolean[] sieve;
-    private static int [] generatePrimes(int max) {
-        int [] sieve = new int [max];
-        sieve [0] = 2;
-        int index = 1;
-        int prime = 1;
-        boolean isPrime = false;
-        while((prime += 2) <= max) {
-            isPrime = true;
-            for(int i = 0; i < index; i++) {
-                if(prime % sieve [i] == 0) {
-                    isPrime = false;
-                    break;
+
+    public Eratosthenes(int N) {
+
+        sieve = new boolean[N];
+        Arrays.fill(sieve, true);
+
+    }
+    private void sift() {
+        for (int i = 2; i < sieve.length; i++) {
+            if (sieve[i] == false) System.out.print(i + " ");
+            for (int j = i + 1; j < sieve.length; j++) {
+                if ((j % i) == 0) {
+                    sieve[j] = true;
                 }
             }
-            if(isPrime) {
-                sieve [index++] = prime;
+        }
+    }
+    public boolean isSimple(int n){
+        for (int i = 2; i < sieve.length; i++) {
+            if (n % i == 0) {
+                return true;
+
+            } else {
+                return false;
             }
         }
-        int [] primes = new int [index];
-        while(--index >= 0) {
-            primes [index] = sieve [index];
-        }
-        return primes;
-    }
-    public Eratosthenes(int N){
-        Arrays.fill(sieve, true);
-    }
-    private void sift(){
-
+        return false;
     }
 
     public static void main(String[] args) {
+
         System.out.println();
+
     }
 }
-
 /*
 1.1 Реализовать класс Eratosthenes, содержащий:
 массив чисел, собственно, "решето"
