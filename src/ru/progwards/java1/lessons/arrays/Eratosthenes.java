@@ -23,19 +23,20 @@ public class Eratosthenes {
     }
     public boolean isSimple(int n){
         for (int i = 2; i < sieve.length; i++) {
-            if (n % i == 0) {
+            if (i == n) {
                 return true;
 
             } else {
                 return false;
             }
         }
+
         return false;
     }
 
     public static void main(String[] args) {
 
-        System.out.println();
+        System.out.println(new Eratosthenes(3));
 
     }
 }

@@ -3,12 +3,15 @@ package ru.progwards.java1.lessons.arrays;
 import java.util.Arrays;
 
      public class DIntArray {
-        private int[] arrayNum;
+         private int[] arrayNum;
+         private int[] arrayNum1;
+         private int[] arrayNum2;
 
 
-         public void add(int num){
-
+         public int add(int num){
+             DIntArray add = new DIntArray();
              int[] arrayNum1 = Arrays. copyOf(arrayNum, arrayNum.length + num);
+             return num;
          }
          public void atInsert(int pos, int num){
 
@@ -16,11 +19,9 @@ import java.util.Arrays;
 
               arrayNum1[pos] = num;
          }
-         public void atDelete(int arrayNum1[], int pos) {
+         public void atDelete(int pos) {
+             int[] arrayNum2 = Arrays. copyOf(arrayNum1, arrayNum1.length - pos);
 
-                 for(int i = pos; i < (arrayNum1.length - 1); i++){
-                     arrayNum1[i] = arrayNum1[i + 1];
-                 }
              }
          public int at(int pos){
              int[] arrayNum1 = Arrays. copyOf(arrayNum, arrayNum.length/2 + pos);
@@ -30,6 +31,7 @@ import java.util.Arrays;
 
          public static void main(String[] args) {
              int[] arrayNum = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+             System.out.println(new DIntArray());
 
 
          }
