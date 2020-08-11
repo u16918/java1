@@ -22,7 +22,10 @@ import java.util.Arrays;
                      arrayNum1[i] = arrayNum1[i + 1];
                  }
              }
-
+         public int at(int pos){
+             int[] arrayNum1 = Arrays. copyOf(arrayNum, arrayNum.length/2 + pos);
+             return pos;
+         }
 
 
          public static void main(String[] args) {
