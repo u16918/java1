@@ -7,9 +7,7 @@ import java.util.Arrays;
          private int[] arrayNum1;
          private int[] arrayNum2;
 
-
          public int add(int num){
-             DIntArray add = new DIntArray();
              int[] arrayNum1 = Arrays. copyOf(arrayNum, arrayNum.length + num);
              return num;
          }
@@ -20,18 +18,19 @@ import java.util.Arrays;
               arrayNum1[pos] = num;
          }
          public void atDelete(int pos) {
+
              int[] arrayNum2 = Arrays. copyOf(arrayNum1, arrayNum1.length - pos);
 
              }
          public int at(int pos){
-             int[] arrayNum1 = Arrays. copyOf(arrayNum, arrayNum.length/2 + pos);
+             int[] arrayNum3 = Arrays. copyOf(arrayNum2, arrayNum2.length/2 + pos);
              return pos;
          }
 
 
          public static void main(String[] args) {
              int[] arrayNum = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-             System.out.println(new DIntArray());
+
 
 
          }

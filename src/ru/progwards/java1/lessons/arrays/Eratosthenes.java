@@ -11,6 +11,7 @@ public class Eratosthenes {
         Arrays.fill(sieve, true);
 
     }
+
     private void sift() {
         for (int i = 2; i < sieve.length; i++) {
             if (sieve[i] == false) System.out.print(i + " ");
@@ -22,15 +23,12 @@ public class Eratosthenes {
         }
     }
     public boolean isSimple(int n){
+        Eratosthenes isSimple = new Eratosthenes(n);
         for (int i = 2; i < sieve.length; i++) {
             if (i == n) {
                 return true;
-
-            } else {
-                return false;
             }
         }
-
         return false;
     }
 
