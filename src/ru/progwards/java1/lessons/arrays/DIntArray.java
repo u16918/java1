@@ -4,33 +4,35 @@ import java.util.Arrays;
 
      public class DIntArray {
          private int[] arrayNum;
-         private int[] arrayNum1;
          private int[] arrayNum2;
+         private int[] arrayNum3;
 
-         public int add(int num){
-             int[] arrayNum1 = Arrays. copyOf(arrayNum, arrayNum.length + num);
-             return num;
+         public void add(int num){
+
+             int[] arrayNum1 = new int[0];
+             arrayNum1 = Arrays. copyOf(arrayNum, arrayNum.length + 1);
+             arrayNum1[arrayNum.length - 1] = num;
+
          }
          public void atInsert(int pos, int num){
-
-             int[] arrayNum1 = Arrays. copyOf(arrayNum, arrayNum.length/2 + pos);
-
-              arrayNum1[pos] = num;
+             int[] arrayNum2 = new int[0];
+             arrayNum2 = Arrays. copyOf(arrayNum, arrayNum.length/2 + pos);
+             arrayNum2[pos] = num;
+             System.out.println(Arrays.toString(arrayNum2));
          }
          public void atDelete(int pos) {
-
-             int[] arrayNum2 = Arrays. copyOf(arrayNum1, arrayNum1.length - pos);
-
+             int[] arrayNum3 = new int[0];
+             arrayNum3 = Arrays. copyOf(arrayNum2,arrayNum2.length - pos);
+             System.out.println(Arrays.toString(arrayNum3));
              }
          public int at(int pos){
-             int[] arrayNum3 = Arrays. copyOf(arrayNum2, arrayNum2.length/2 + pos);
-             return pos;
+             int[] arrayNum4 = new int[0];
+             arrayNum4 = Arrays. copyOf(arrayNum3, arrayNum3.length/2 + pos);
+             return arrayNum4[pos];
          }
 
 
          public static void main(String[] args) {
-             int[] arrayNum = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-
 
 
          }
