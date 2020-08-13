@@ -3,48 +3,26 @@ package ru.progwards.java1.lessons.arrays;
 import java.util.Arrays;
 
      public class DIntArray {
-         private int[] arrayNum;
-
-         public DIntArray(){
-
-         }
-         public void add(int num){
-             int[] arrayNum = new int[0];
+         public static void main(String[] args) {
+             int num = 5;
+             int pos = 4;
+             int[] arrayNum = new int[] {1, 2, 3, 4};
              System.out.println(Arrays.toString(arrayNum));
              arrayNum = Arrays.copyOf(arrayNum, arrayNum.length + 1);
              arrayNum[arrayNum.length - 1] = num;
-         }
+             System.out.println(Arrays.toString(arrayNum));
 
-         public void atInsert(int pos, int num){
-             arrayNum = Arrays.copyOf(arrayNum, arrayNum.length/2 + pos);
+             arrayNum = Arrays.copyOf(arrayNum, arrayNum.length / 2 + pos);
+             arrayNum[pos] = num;
+             System.out.println(Arrays.toString(arrayNum));
+
+             arrayNum = Arrays.copyOf(arrayNum, arrayNum.length - pos);
+             System.out.println(Arrays.toString(arrayNum));
+
+             arrayNum = Arrays.copyOf(arrayNum, arrayNum.length / 2 + pos);
              arrayNum[pos] = num;
              System.out.println(Arrays.toString(arrayNum));
          }
-
-         public void atDelete(int pos) {
-             arrayNum = Arrays.copyOf(arrayNum, arrayNum.length - pos);
-             System.out.println(Arrays.toString(arrayNum));
-         }
-
-         public int at(int pos){
-             arrayNum = Arrays.copyOf(arrayNum, arrayNum.length/2 + pos);
-             return arrayNum[pos];
-         }
-
-
-         public static void main(String[] args) {
-             DIntArray add = new DIntArray();
-             DIntArray atInsert = new DIntArray();
-             DIntArray atDelete = new DIntArray();
-             DIntArray at = new DIntArray();
-
-             System.out.println(Arrays.toString(add.arrayNum));
-             System.out.println(Arrays.toString(atInsert.arrayNum));
-             System.out.println(Arrays.toString(atDelete.arrayNum));
-             System.out.println(Arrays.toString(at.arrayNum));
-
-         }
-
 
      }
 
