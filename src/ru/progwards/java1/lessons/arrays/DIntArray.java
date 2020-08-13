@@ -4,40 +4,49 @@ import java.util.Arrays;
 
      public class DIntArray {
          private int[] arrayNum;
-         private int[] arrayNum2;
-         private int[] arrayNum3;
 
+         public DIntArray(){
+
+         }
          public void add(int num){
-
-             int[] arrayNum1 = new int[0];
-             arrayNum1 = Arrays. copyOf(arrayNum, arrayNum.length + 1);
-             arrayNum1[arrayNum.length - 1] = num;
-
+             int[] arrayNum = new int[0];
+             System.out.println(Arrays.toString(arrayNum));
+             arrayNum = Arrays.copyOf(arrayNum, arrayNum.length + 1);
+             arrayNum[arrayNum.length - 1] = num;
          }
+
          public void atInsert(int pos, int num){
-             int[] arrayNum2 = new int[0];
-             arrayNum2 = Arrays. copyOf(arrayNum, arrayNum.length/2 + pos);
-             arrayNum2[pos] = num;
-             System.out.println(Arrays.toString(arrayNum2));
+             arrayNum = Arrays.copyOf(arrayNum, arrayNum.length/2 + pos);
+             arrayNum[pos] = num;
+             System.out.println(Arrays.toString(arrayNum));
          }
+
          public void atDelete(int pos) {
-             int[] arrayNum3 = new int[0];
-             arrayNum3 = Arrays. copyOf(arrayNum2,arrayNum2.length - pos);
-             System.out.println(Arrays.toString(arrayNum3));
-             }
+             arrayNum = Arrays.copyOf(arrayNum, arrayNum.length - pos);
+             System.out.println(Arrays.toString(arrayNum));
+         }
+
          public int at(int pos){
-             int[] arrayNum4 = new int[0];
-             arrayNum4 = Arrays. copyOf(arrayNum3, arrayNum3.length/2 + pos);
-             return arrayNum4[pos];
+             arrayNum = Arrays.copyOf(arrayNum, arrayNum.length/2 + pos);
+             return arrayNum[pos];
          }
 
 
          public static void main(String[] args) {
+             DIntArray add = new DIntArray();
+             DIntArray atInsert = new DIntArray();
+             DIntArray atDelete = new DIntArray();
+             DIntArray at = new DIntArray();
 
+             System.out.println(Arrays.toString(add.arrayNum));
+             System.out.println(Arrays.toString(atInsert.arrayNum));
+             System.out.println(Arrays.toString(atDelete.arrayNum));
+             System.out.println(Arrays.toString(at.arrayNum));
 
          }
 
-}
+
+     }
 
 /*
 Задача 3. Класс DIntArray
