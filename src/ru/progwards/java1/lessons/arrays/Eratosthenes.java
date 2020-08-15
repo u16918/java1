@@ -11,26 +11,36 @@ public class Eratosthenes {
 
     }
     private void sift() {
-        sieve[1] = false;
-        for (int i=2; i*i < sieve.length; i++)
-            if (sieve[i])
-                for (int j=i*i; j < sieve.length; j+=i)
-                    sieve[j] = false;
-    }
 
-    public boolean isSimple(int n) {
-        for (int i = 2; i < sieve.length; i++) {
+        sieve[0] = false;
+        sieve[1] = false;
+        for (int i = 2; i < sieve.length; ++i) {
+            if (sieve[i]) {
+                for (int j = 2; i * j < sieve.length; ++j) {
+                    sieve[i * j] = false;
+                }
+            }
+        }
+        System.out.println(Arrays.toString(sieve));
+    }
+    public boolean isSimple(int n){
+        for (int i = 2; i < n; i++) {
             if (n % i == 0) {
                 return false;
             }
         }
         return true;
     }
+
+
+
     public static void main(String[] args) {
-        Eratosthenes isSimple = new Eratosthenes(6);
-        Eratosthenes sift = new Eratosthenes(6);
-        System.out.println(Arrays.toString(isSimple.sieve));
-        System.out.println(Arrays.toString(sift.sieve));
+        Eratosthenes tmpisSimple = new Eratosthenes(15);
+        System.out.println(tmpisSimple.isSimple(4));
+
+        Eratosthenes tmpSift = new Eratosthenes(15);
+        tmpSift.sift();
+
     }
 }
 /*
