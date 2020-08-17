@@ -1,4 +1,4 @@
-package MyProgect;
+package MyProgect.Test;
 
 class Complex  {
     static int counter=0;

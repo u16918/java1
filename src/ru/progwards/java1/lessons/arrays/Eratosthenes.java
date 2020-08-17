@@ -8,7 +8,6 @@ public class Eratosthenes {
     public Eratosthenes(int N) {
         sieve = new boolean[N];
         Arrays.fill(sieve, true);
-
     }
     private void sift() {
 

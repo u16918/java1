@@ -1,4 +1,4 @@
-package MyProgect;
+package MyProgect.Test;
 
 public class Point2D {
     int x; int y;

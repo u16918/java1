@@ -1,4 +1,4 @@
-package MyProgect;
+package MyProgect.Test;
 
 public class Task3 {
     public static void main(String[] args) {

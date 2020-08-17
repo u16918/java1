@@ -1,4 +1,4 @@
-package MyProgect;
+package MyProgect.Test;
 
 import java.util.Arrays;
 

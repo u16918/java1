@@ -1,4 +1,4 @@
-package MyProgect;
+package MyProgect.Test;
 
 public class Calculator {
     private int result;

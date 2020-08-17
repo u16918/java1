@@ -1,4 +1,4 @@
-package MyProgect;
+package MyProgect.Test;
 
 public class Test4_3 {
     static long factorial(long n){

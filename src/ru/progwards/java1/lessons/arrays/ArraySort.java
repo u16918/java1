@@ -4,12 +4,12 @@ import java.util.Arrays;
 
 public class ArraySort {
     public static void sort(int[] a) {
-        for (int i = a.length - 1; i > 0; i--) {
-            for (int j = 0; j < i; j++) {
-                if (a[j] > a[j + 1]) {
+        for (int i = 0; i < a.length; i++) {
+            for (int j = i+1; j < a.length;j++) {
+                if (a[i] > a[j]) {
                     int m = a[j];
-                    a[j] = a[j + 1];
-                    a[j + 1] = m;
+                    a[j] = a[i];
+                    a[i] = m;
                 }
             }
         }

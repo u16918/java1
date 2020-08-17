@@ -1,4 +1,4 @@
-package MyProgect;
+package MyProgect.Test;
 
 public class Test4_2 {
     static String textGrade(int grade) {

@@ -1,4 +1,4 @@
-package MyProgect;
+package MyProgect.Test;
 
 public class SumArray {
     public int sumArrayItems(int[] a) {

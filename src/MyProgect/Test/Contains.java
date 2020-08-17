@@ -1,4 +1,4 @@
-package MyProgect;
+package MyProgect.Test;
 
 public class Contains {
     public static boolean containsDigit(int number, int digit) {

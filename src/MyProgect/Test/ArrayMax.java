@@ -1,4 +1,4 @@
-package MyProgect;
+package MyProgect.Test;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;

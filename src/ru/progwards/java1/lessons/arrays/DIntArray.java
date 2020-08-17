@@ -1,31 +1,32 @@
 package ru.progwards.java1.lessons.arrays;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 
-     public class DIntArray {
+public class DIntArray {
 
-
-         private int[] arrayNum = new int[]{1, 2, 3, 4, 5, 6};
+    private int[] arrayNum = new int[]{1, 3, 5, 6, 19, 18};
 
          public DIntArray(){
          }
-
          public void add(int num) {
-            arrayNum = Arrays.copyOf(arrayNum, arrayNum.length + 1);
-            arrayNum[arrayNum.length - 1] = num;
-            System.out.println(Arrays.toString(arrayNum));
+             arrayNum = Arrays.copyOf(arrayNum, arrayNum.length + 1);
+             arrayNum[arrayNum.length - 1] = num;
+             System.out.println(Arrays.toString(arrayNum));
          }
          public void atInsert(int pos, int num){
-            arrayNum = Arrays.copyOf(arrayNum, arrayNum.length + pos);
-            arrayNum[pos] = num;
-            System.out.println(Arrays.toString(arrayNum));
+             arrayNum = Arrays.copyOf(arrayNum, arrayNum.length/2 + 1 + pos);
+             arrayNum = Arrays.copyOf(arrayNum, arrayNum.length);
+             arrayNum[pos] = num;
+             System.out.println(Arrays.toString(arrayNum));
          }
          public void atDelete(int pos){
-            arrayNum = Arrays.copyOf(arrayNum, arrayNum.length - pos);
-            System.out.println(Arrays.toString(arrayNum));
+             arrayNum = Arrays.copyOf(arrayNum, arrayNum.length - pos);
+             System.out.println(Arrays.toString(arrayNum));
          }
-         public int at(int pos){
-            arrayNum = Arrays.copyOf(arrayNum, arrayNum.length / 2 + pos);
+        public int at(int pos){
+
             return pos;
          }
 
@@ -34,14 +35,14 @@ import java.util.Arrays;
                tmp.add(5);
 
              DIntArray tmpIns = new DIntArray();
-               tmpIns.atInsert(5,8);
+               tmpIns.atInsert(3,77);
 
-             DIntArray tmpDel = new DIntArray();
-               tmpDel.atDelete(1);
+            DIntArray tmpDel = new DIntArray();
+               tmpDel.atDelete(3);
 
-             DIntArray tmpAt = new DIntArray();
-               tmpAt.at(4);
-             System.out.println(Arrays.toString(tmpAt.arrayNum));
+            DIntArray tmpAt = new DIntArray();
+             tmpAt.at(6);
+            System.out.println(Arrays.toString(tmpAt.arrayNum));
          }
      }
 

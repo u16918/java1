@@ -1,4 +1,4 @@
-package MyProgect;
+package MyProgect.Test;
 
 public class Task4 {
     static int addAsStrings(int n1, int n2){

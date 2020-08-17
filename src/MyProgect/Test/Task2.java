@@ -1,4 +1,4 @@
-package MyProgect;
+package MyProgect.Test;
 
 public class Task2 {
     public static void printJava(){

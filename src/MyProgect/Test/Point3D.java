@@ -1,4 +1,4 @@
-package MyProgect;
+package MyProgect.Test;
 
 public class Point3D extends Point2D{
    private int z;
