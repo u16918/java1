@@ -1,23 +1,25 @@
 package ru.progwards.java1.lessons.bitsworld;
 
 public class Binary {
-    private int num;
+    private byte num;
     public Binary(byte num){
-      this.num = num;
+        this.num = num;
     }
-    public String toString(){
-        String result = "";
-        while (num > 0){
-        int inspect = num % 2;
-        Integer.toString(inspect);
-        result = inspect + result;
-        num /= 2;
-        }
-        return result;
-    }
+
+    public String toString() {
+
+         String result = "";
+         for (int i = 7; i >= 0; i--) {
+             result += (num >> i) & 0b00000001;
+         }
+         return result;
+     }
+
+
     public static void main(String[] args) {
-        //System.out.println(Integer.toBinaryString(-128));
-        System.out.println(String.format("%8s", Integer.toBinaryString(-128)).replace(' ', '0'));
+        Binary toSt = new Binary((byte) -128);
+        System.out.println(toSt.toString());
+       //System.out.println(String.format("%8s", Integer.toBinaryString(127)).replace(' ', '0'));
 
     }
 }
