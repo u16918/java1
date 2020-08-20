@@ -1,12 +1,13 @@
 package MyProgect.Test;
 
 public class BatyValue {
-    public static void main(String[] args) {
-        byte value = 5;
-        int result = value & 1;
-        System.out.println(Integer.toBinaryString(result));
 
+    public static void main(String[] args) {
+        byte value = 0;
+        int result = value & 00000001;
+        System.out.println(result);
     }
+
 }
 /*
 Написать программный код, который возвращает младший (нулевой) бит переменной byte value.

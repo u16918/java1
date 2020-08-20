@@ -6,43 +6,46 @@ import java.util.LinkedList;
 
 public class DIntArray {
 
-    private int[] arrayNum = new int[]{1, 3, 5, 6, 19, 18};
+    private int[] arrayNum = new int[]{87,-5,-33,33,-83,22,-96,-76};
 
          public DIntArray(){
          }
+
          public void add(int num) {
+
              arrayNum = Arrays.copyOf(arrayNum, arrayNum.length + 1);
              arrayNum[arrayNum.length - 1] = num;
              System.out.println(Arrays.toString(arrayNum));
          }
          public void atInsert(int pos, int num){
-             arrayNum = Arrays.copyOf(arrayNum, arrayNum.length/2 + 1 + pos);
-             arrayNum = Arrays.copyOf(arrayNum, arrayNum.length);
+             arrayNum = Arrays.copyOf(arrayNum, arrayNum.length/2+1+pos);
              arrayNum[pos] = num;
              System.out.println(Arrays.toString(arrayNum));
          }
          public void atDelete(int pos){
-             arrayNum = Arrays.copyOf(arrayNum, arrayNum.length - pos);
+             System.arraycopy(arrayNum, 0, arrayNum, 0, pos);
+             System.arraycopy(arrayNum, pos + 1, arrayNum, pos, arrayNum.length - pos - 1);
+             arrayNum = Arrays.copyOf(arrayNum, arrayNum.length-1);
              System.out.println(Arrays.toString(arrayNum));
+
          }
         public int at(int pos){
 
-            return pos;
-         }
+             return arrayNum[pos];
+        }
 
          public static void main(String[] args) {
              DIntArray tmp = new DIntArray();
                tmp.add(5);
 
              DIntArray tmpIns = new DIntArray();
-               tmpIns.atInsert(3,77);
+               tmpIns.atInsert(5,-75);
 
             DIntArray tmpDel = new DIntArray();
-               tmpDel.atDelete(3);
+               tmpDel.atDelete(2);
 
             DIntArray tmpAt = new DIntArray();
-             tmpAt.at(6);
-            System.out.println(Arrays.toString(tmpAt.arrayNum));
+             System.out.println(tmpAt.at(2));
          }
      }
 
