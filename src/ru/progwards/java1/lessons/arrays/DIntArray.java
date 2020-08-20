@@ -1,24 +1,23 @@
 package ru.progwards.java1.lessons.arrays;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.LinkedList;
 
 public class DIntArray {
-
-    private int[] arrayNum = new int[]{87,-5,-33,33,-83,22,-96,-76};
+          int num;
+    private int[] arrayNum = new int[]{-87,-5,-33,33,-83,22,-96,-76};
 
          public DIntArray(){
          }
 
          public void add(int num) {
-
+             this.num = num;
              arrayNum = Arrays.copyOf(arrayNum, arrayNum.length + 1);
              arrayNum[arrayNum.length - 1] = num;
              System.out.println(Arrays.toString(arrayNum));
          }
          public void atInsert(int pos, int num){
-             arrayNum = Arrays.copyOf(arrayNum, arrayNum.length/2+1+pos);
+             this.num = num;
+             arrayNum = Arrays.copyOf(arrayNum, arrayNum.length+pos-1);
              arrayNum[pos] = num;
              System.out.println(Arrays.toString(arrayNum));
          }
@@ -31,15 +30,20 @@ public class DIntArray {
          }
         public int at(int pos){
 
+            DIntArray tmp;
+            DIntArray tmpIns;
+            DIntArray tmpDel;
+
              return arrayNum[pos];
         }
 
-         public static void main(String[] args) {
-             DIntArray tmp = new DIntArray();
-               tmp.add(5);
+
+    public static void main(String[] args) {
+            DIntArray tmp = new DIntArray();
+              tmp.add(5);
 
              DIntArray tmpIns = new DIntArray();
-               tmpIns.atInsert(5,-75);
+               tmpIns.atInsert(2,-30);
 
             DIntArray tmpDel = new DIntArray();
                tmpDel.atDelete(2);
