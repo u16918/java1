@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class DIntArray {
           int num;
-    private int[] arrayNum = new int[]{-87,-5,-33,33,-83,22,-96,-76};
+    private int[] arrayNum = new int[0];
 
          public DIntArray(){
          }
@@ -39,6 +39,7 @@ public class DIntArray {
 
 
     public static void main(String[] args) {
+
             DIntArray tmp = new DIntArray();
               tmp.add(5);
 
