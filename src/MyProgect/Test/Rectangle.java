@@ -1,54 +1,53 @@
 package MyProgect.Test;
 
+import java.util.Objects;
+
 public class Rectangle {
+
     private double a;
     private double b;
+
     public Rectangle(double a, double b) {
         this.a = a;
         this.b = b;
     }
+
     public double area() {
+
         return a*b;
     }
 
-    Rectangle anRectangle(double a, double b) {
-        this.a = a;
-        this.b = b;
-        return new Rectangle(a, b);
+
+    @Override
+    public boolean equals(Object anObject) {
+        if (this == anObject) return true;
+        if (anObject == null || getClass() != anObject.getClass()) return false;
+        Rectangle rectangle = (Rectangle) anObject;
+
+        Rectangle a1 = new Rectangle(a, b);
+        Rectangle a2 = new Rectangle(a, b);
+
+
+        return Double.compare(a1.area(), ((Rectangle) anObject).area()) == 0;
     }
 
-    public int compareTo(Rectangle anRectangle){
-        int s1,s2;
-        s1 = (int) Rectangle.this.area();
-        s2 = (int) anRectangle.area();
-        if (s1 > s2) return 1;
-        if (s1 == s2) return 0;
-        else return -1;
+        public static void main(String[] args) {
 
-    }
-
-    public static void main(String[] args) {
-
-        System.out.println(new Rectangle(2,3).compareTo(new Rectangle(3, 2)));
+        System.out.println(new Rectangle(3,4).equals(new Rectangle(6, 2)));
     }
 }
 
 /*
-реализуйте метод compareTo с сигнатурой
-public int compareTo(Rectangle anRectangle) который должен сравнивать прямоугольники по величине их площади.
-При сравнении a.compareTo(b) метод должен возвращать
-a   > b : 1
-a == b : 0
-a   < b : -1
+переопределите метод equals с сигнатурой
+public boolean equals(Object anObject) который должен сравнивать прямоугольники по величине их площади.
 
 Например
 
-прямоугольник 2x2  >  прямоугольника 1x1 - результат 1
-прямоугольник 2x3 == прямоугольнику 3x2 - результат 0
-прямоугольник 2x2  <  прямоугольника 3x3 - результат -1
+прямоугольник 2x2 != прямоугольнику 1x1
+прямоугольник 2x3 == прямоугольнику 3x2
+
 
 
 
 
  */
-

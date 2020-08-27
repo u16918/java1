@@ -40,6 +40,8 @@ public class DIntArray {
 
     public static void main(String[] args) {
 
+        int[] arrayNum = {-83,-15,51,84,-84,-72,63,-61,-6,-5,35,72,-75,-52,68,43,-37,-57};
+
             DIntArray tmp = new DIntArray();
               tmp.add(5);
 
