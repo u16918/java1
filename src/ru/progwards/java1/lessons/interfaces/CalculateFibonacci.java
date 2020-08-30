@@ -11,30 +11,28 @@ public class CalculateFibonacci {
         CacheInfo cacheInfo = new CacheInfo();
         if (n == cacheInfo.n){
             return cacheInfo.fibo;
-        } else if (n<=1){
-            return n;
-        } else {
-            int l = 0;
-            int k = 1;
-            for (int i = 0; i <= n ; i++) {
-                int num = l+k;
-                l=k;
-                k=num;
-            }
+        } else if (n < 1){
+            return 0;
+        } else if (n == 1){
+            return 1;
+            } else {
+                int n1 = fiboNumber(n - 1) + fiboNumber(n - 2);
             cacheInfo.n = n;
-            cacheInfo.fibo = k;
-            return k;
+            cacheInfo.fibo = n1;
+            return n1;
         }
     }
 
-    public static CacheInfo getLastFibo(){
+    public CacheInfo getLastFibo(){
         return lastFibo;
     }
-    public static void clearLastFibo(){
+    public void clearLastFibo(){
         lastFibo = null;
     }
 
     public static void main(String[] args) {
-        System.out.println(fiboNumber(5));
+        CalculateFibonacci get = new CalculateFibonacci();
+        System.out.println(fiboNumber(2));
+        System.out.println(get.getLastFibo());
     }
 }

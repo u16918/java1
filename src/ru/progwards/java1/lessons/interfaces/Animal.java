@@ -2,6 +2,7 @@ package ru.progwards.java1.lessons.interfaces;
 
 import java.util.Objects;
 
+import static ru.progwards.java1.lessons.interfaces.Animal.FoodKind.UNKNOWN;
 import static ru.progwards.java1.lessons.interfaces.CompareWeight.CompareResult.*;
 
 public class Animal implements FoodCompare, CompareWeight {
@@ -15,7 +16,7 @@ public class Animal implements FoodCompare, CompareWeight {
     }
     enum FoodKind {UNKNOWN, HAY, CORN}
     public FoodKind getFoodKind(){
-        return FoodKind.UNKNOWN;
+        return UNKNOWN;
     }
     public String toString(){
         return "I am " + getKind() + ", " + "eat " + getFoodKind();
@@ -47,29 +48,23 @@ public class Animal implements FoodCompare, CompareWeight {
     }
 
     public double getFood1kgPrice(){
-        FoodKind fp = FoodKind.UNKNOWN;
-        switch(fp) {
-            case HAY: return 20;
-            case CORN: return 50;
-            case UNKNOWN: return 0;
-        }
-        return 0;
+      return  switch (getFoodKind()){
+            case HAY -> 20;
+            case CORN -> 50;
+            case UNKNOWN -> 0;
+        };
     }
 
     public double getFoodPrice(){
         return calculateFoodWeight() * getFood1kgPrice();
     }
+
     @Override
-    public int compareFoodPrice(Animal aminal) {
-       if (Double.compare(getA, getFoodPrice())>0){
-           return getA;
-       }
-        if (Double.compare(getA, getFoodPrice())<0){
-            return (int) getFoodPrice();
-        } else {
-        return 0;
-        }
+    public int сompareFoodPrice(Animal animal) {
+
+        return  Double.compare(this.weight, getFoodPrice());
     }
+
     @Override
     public CompareResult compareWeight(CompareWeight smthHasWeigt){
 
@@ -85,6 +80,8 @@ public class Animal implements FoodCompare, CompareWeight {
     public static void main(String[] args) {
         System.out.println(new Animal(295));
         System.out.println(new Animal(20).equals(new Animal(21)));
+        System.out.println(new Cow(1D).getFood1kgPrice());
+        System.out.println(new Animal(5D).сompareFoodPrice(new Cow(1D)));
 
     }
 

@@ -1,15 +1,16 @@
 package ru.progwards.java1.lessons.interfaces;
 
+import static ru.progwards.java1.lessons.interfaces.Animal.AnimalKind.COW;
+import static ru.progwards.java1.lessons.interfaces.Animal.FoodKind.HAY;
+
 public class  Cow extends Animal{
     public Cow(double weight) {
         super(weight);
     }
     public AnimalKind getKind() {
-        AnimalKind COW = AnimalKind.COW;
         return COW;
     }
     public FoodKind getFoodKind(){
-        FoodKind HAY = FoodKind.HAY;
         return HAY;
     }
     @Override
