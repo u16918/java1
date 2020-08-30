@@ -9,6 +9,9 @@ public class Food implements CompareWeight{
     public Food(int weight){
         this.weight = weight;
     }
+    public int getWeight(){
+        return weight;
+    }
 
     @Override
     public CompareResult compareWeight(CompareWeight smthHasWeigt) {

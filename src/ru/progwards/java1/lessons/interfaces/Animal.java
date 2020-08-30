@@ -5,7 +5,7 @@ import java.util.Objects;
 import static ru.progwards.java1.lessons.interfaces.Animal.FoodKind.UNKNOWN;
 import static ru.progwards.java1.lessons.interfaces.CompareWeight.CompareResult.*;
 
-public class Animal implements FoodCompare, CompareWeight {
+public class Animal implements FoodCompare, CompareWeight,  {
     double weight;
     public Animal(double weight){
     this.weight = weight;
@@ -61,10 +61,10 @@ public class Animal implements FoodCompare, CompareWeight {
     }
 
     @Override
-    public int сompareFoodPrice(Animal animal) {
-
-        return  Double.compare(this.weight, getFoodPrice());
+    public int compareFoodPrice(Animal aminal){
+        return Double.compare(this.weight, getFoodPrice());
     }
+
 
     @Override
     public CompareResult compareWeight(CompareWeight smthHasWeigt){
@@ -82,7 +82,7 @@ public class Animal implements FoodCompare, CompareWeight {
         System.out.println(new Animal(295));
         System.out.println(new Animal(20).equals(new Animal(21)));
         System.out.println(new Cow(1D).getFood1kgPrice());
-        System.out.println(new Animal(1D).сompareFoodPrice(new Cow(1D)));
+        //System.out.println(new Animal(1D).сompareFoodPrice(new Cow(1D)));
 
     }
 
