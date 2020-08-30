@@ -68,9 +68,9 @@ public class Animal implements FoodCompare, CompareWeight {
     @Override
     public CompareResult compareWeight(CompareWeight smthHasWeigt){
 
-            if (getB > weight) return LESS;
-            if (getB == weight) return EQUAL;
-            if (getB < weight) return GREATER;
+            if (getB > this.weight) return LESS;
+            if (getB == this.weight) return EQUAL;
+            if (getB < this.weight) return GREATER;
 
         return null;
     }
@@ -81,7 +81,7 @@ public class Animal implements FoodCompare, CompareWeight {
         System.out.println(new Animal(295));
         System.out.println(new Animal(20).equals(new Animal(21)));
         System.out.println(new Cow(1D).getFood1kgPrice());
-        System.out.println(new Animal(5D).сompareFoodPrice(new Cow(1D)));
+        System.out.println(new Animal(1D).сompareFoodPrice(new Cow(1D)));
 
     }
 
