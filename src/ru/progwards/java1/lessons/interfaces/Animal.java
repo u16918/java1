@@ -5,7 +5,7 @@ import java.util.Objects;
 import static ru.progwards.java1.lessons.interfaces.Animal.FoodKind.UNKNOWN;
 import static ru.progwards.java1.lessons.interfaces.CompareWeight.CompareResult.*;
 
-public class Animal implements FoodCompare, CompareWeight,  {
+public class Animal implements  CompareWeight, FoodCompare {
     double weight;
     public Animal(double weight){
     this.weight = weight;
@@ -21,6 +21,7 @@ public class Animal implements FoodCompare, CompareWeight,  {
     public String toString(){
         return "I am " + getKind() + ", " + "eat " + getFoodKind();
     }
+    @Override
     public double getWeight(){
         return weight;
     }
@@ -62,30 +63,27 @@ public class Animal implements FoodCompare, CompareWeight,  {
 
     @Override
     public int compareFoodPrice(Animal aminal){
-        return Double.compare(this.weight, getFoodPrice());
+        return Double.compare(getFoodPrice(), aminal.getFoodPrice());
     }
-
-
+//Задача 3
     @Override
     public CompareResult compareWeight(CompareWeight smthHasWeigt){
 
-            if (getB > this.weight) return LESS;
-            if (getB == this.weight) return EQUAL;
-            if (getB < this.weight) return GREATER;
-
+        if (getWeight() < smthHasWeigt.getWeight()) return LESS;
+        if (getWeight() == smthHasWeigt.getWeight()) return EQUAL;
+        if (getWeight() > smthHasWeigt.getWeight()) return GREATER;
         return null;
     }
-
-
 
     public static void main(String[] args) {
         System.out.println(new Animal(295));
         System.out.println(new Animal(20).equals(new Animal(21)));
         System.out.println(new Cow(1D).getFood1kgPrice());
-        //System.out.println(new Animal(1D).сompareFoodPrice(new Cow(1D)));
+        System.out.println(new Animal(1D).compareFoodPrice(new Cow(1D)));
+
+
 
     }
-
 
 }
 /*
