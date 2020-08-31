@@ -23,16 +23,15 @@ public class CalculateFibonacci {
         }
     }
 
-    public CacheInfo getLastFibo(){
+    public static CacheInfo getLastFibo(){
         return lastFibo;
     }
-    public void clearLastFibo(){
+    public static void clearLastFibo(){
         lastFibo = null;
     }
 
     public static void main(String[] args) {
-        CalculateFibonacci get = new CalculateFibonacci();
         System.out.println(fiboNumber(2));
-        System.out.println(get.getLastFibo());
+        System.out.println(getLastFibo());
     }
 }
