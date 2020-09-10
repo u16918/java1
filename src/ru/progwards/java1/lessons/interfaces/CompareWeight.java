@@ -8,7 +8,8 @@ public interface CompareWeight {
     public enum CompareResult{
         LESS,
         EQUAL,
-        GREATER
-    }
+        GREATER;
+
+           }
 
 }
