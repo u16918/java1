@@ -30,35 +30,35 @@ public class ArrayInteger {
     }
 
     boolean add(ArrayInteger num) {
-        int objLen = this.digits.length;
-        int numLen = num.digits.length;
-        if (objLen != numLen) {
-            if (objLen > numLen) {
-                int diff = objLen - numLen;
-                byte[] temp = new byte[numLen];
-                System.arraycopy(num.digits, 0, temp, 0, numLen);
-                num.digits = new byte[numLen+diff];
+        int obbA = this.digits.length;
+        int numB = num.digits.length;
+        if (obbA != numB) {
+            if (obbA > numB) {
+                int diff = obbA - numB;
+                byte[] temp = new byte[numB];
+                System.arraycopy(num.digits, 0, temp, 0, numB);
+                num.digits = new byte[numB+diff];
                 System.arraycopy(temp, 0, num.digits, 0, temp.length);
             } else {
-                int diff = numLen - objLen;
-                byte[] temp = new byte[objLen];
-                System.arraycopy(this.digits, 0, temp, 0, objLen);
-                this.digits = new byte[objLen+diff];
+                int diff = numB - obbA;
+                byte[] temp = new byte[obbA];
+                System.arraycopy(this.digits, 0, temp, 0, obbA);
+                this.digits = new byte[obbA+diff];
                 System.arraycopy(temp, 0, this.digits, 0, temp.length);
             }
         }
 
-        byte addition = 0;
+        byte dop = 0;
         for (int i=0; i<digits.length; i++) {
-            if (this.digits[i]+num.digits[i]+addition<=9) {
-                this.digits[i] = (byte)(this.digits[i]+num.digits[i]+addition);
-                addition = 0;
+            if (this.digits[i]+num.digits[i]+dop<=9) {
+                this.digits[i] = (byte)(this.digits[i]+num.digits[i]+dop);
+                dop = 0;
             } else {
-                this.digits[i] = (byte)(this.digits[i]+num.digits[i]+addition-10);
-                addition = 1;
+                this.digits[i] = (byte)(this.digits[i]+num.digits[i]+dop-10);
+                dop = 1;
             }
         }
-        if (addition==1) {
+        if (dop==1) {
             for (int i=0; i<digits.length; i++) {
                 this.digits[i] = 0;
             }
