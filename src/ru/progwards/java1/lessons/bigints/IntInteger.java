@@ -1,17 +1,19 @@
 package ru.progwards.java1.lessons.bigints;
 
 public class IntInteger extends AbsInteger{
-    int i;
-    IntInteger(int i){
-        this.i = i;
-    }
+    int numer;
 
-    public IntInteger add(IntInteger num){
-      return new IntInteger(this.number + num.number);
+    IntInteger(int n) {
+        this.numer = n;
     }
 
     @Override
     public String toString() {
-        return Integer.toString(i);
+        return Integer.toString(numer);
+    }
+
+    public IntInteger add(IntInteger num) {
+        IntInteger res = new IntInteger(this.numer + num.numer);
+        return res;
     }
 }

@@ -1,36 +1,43 @@
 package ru.progwards.java1.lessons.bigints;
 
-import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.math.RoundingMode;
+import java.io.*;
+import java.util.Scanner;
 
 public class AbsInteger {
-    int number;
+    int numer;
 
     public String toString() {
-        return Integer.toString(number);
+        return Integer.toString(numer);
     }
 
     static AbsInteger add(AbsInteger num1, AbsInteger num2) {
-
         IntInteger n1 = new IntInteger(Integer.parseInt(num1.toString()));
         IntInteger n2 = new IntInteger(Integer.parseInt(num2.toString()));
-        return n1.add(n2);
+        IntInteger result = n1.add(n2);
 
+        if (result.numer < Byte.MAX_VALUE && result.numer > Byte.MIN_VALUE) {
+            return new ByteInteger((byte) result.numer);
+        }
+        if (result.numer < Short.MAX_VALUE && result.numer > Short.MIN_VALUE) {
+            return new ShortInteger((short) result.numer);
+        }
+        return result;
     }
 
-    public static void main(String[] args) {
-        IntInteger a1 = new IntInteger( 5);
-        ByteInteger a2 = new ByteInteger((byte)55);
-        ShortInteger a3 = new ShortInteger((short)66);
-
-        System.out.println(a1);
-        System.out.println(a2);
-        System.out.println(a3);
+    public static void main(String[] args) throws IOException {
+        IntInteger a1 = new IntInteger(15);
+        ByteInteger a2 = new ByteInteger((byte) 25);
+        ShortInteger a3 = new ShortInteger((short) 35);
 
         System.out.println(add(a1, a2));
         System.out.println(add(a1, a3));
+        System.out.println(add(a2, a3));
+
+        AbsInteger nid = new AbsInteger();
+
     }
+
+
 }
 
 /*
