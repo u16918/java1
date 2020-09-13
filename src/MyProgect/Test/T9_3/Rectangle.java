@@ -15,23 +15,14 @@ static class Rectangle {
         this.a = a;
         this.b = b;
     }
-    public BigDecimal area() {
-        return a.multiply(b);
-    }
-
     boolean rectCompare(Rectangle r1, Rectangle r2){
-        r1 = new Rectangle(a, b);
-        r2 = new Rectangle(a, b);
-       return r1.area().equals(r1.area());
+
+        return r1.a.multiply(r1.b).compareTo(r2.a.multiply(r2.b)) == 0;
     }
 
     public static void main(String[] args) {
 
-        System.out.println();
-
     }
-
-
+ }
 }
 
-}
