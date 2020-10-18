@@ -14,13 +14,13 @@ public class PhoneNumber {
                 if(num.charAt(0)=='8' || (num.charAt(0)=='7'))
                     num.setCharAt(0,'7');
                 else throw new Exception("Enter the correct number");
-            }
+            }else throw new Exception("Enter the correct number");
         }
         num.insert(0,'+').insert(2,'(').insert(6,')').insert(10,'-');
         return num.toString();
     }
     public static void main(String[] args) throws Exception {
-        System.out.println(format("9555555555"));
+        System.out.println(format("8158050282311"));
     }
 }
 
