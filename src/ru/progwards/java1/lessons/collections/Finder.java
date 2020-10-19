@@ -45,35 +45,40 @@ public class Finder {
         String[] find = new String[names.size()];
         names.toArray(find);
         int[] counts = new int[find.length];
-
         for (int i = 0; i < find.length; i++) {
-            for (int j = 0; j < find.length; j++) {
+            for (int j = i; j < find.length; j++) {
                 if (find[i].equals(find[j])) {
                     counts[i] = counts[i]+1;
+                } else {
+                    break;
                 }
             }
         }
 
         int max = counts[counts.length-1];
-        String res = find[counts.length-1] + ":" + counts[counts.length-1];
-        for (int i=counts.length-2; i>=0; i--) {
-            if (counts[i]>=max) {
+        String result = find[counts.length-1] + ":" + counts[counts.length-1];
+        for (int i = counts.length-2; i >= 0; i--) {
+            if (counts[i] >= max) {
                 max = counts[i];
-                res = find[i] + ":" + counts[i];
+                result = find[i] + ":" + counts[i];
             }
         }
-        return res;
+        return result;
     }
 
     public static void main(String[] args) {
-        Collection<String> names = new ArrayList();
-        names.add("Жигули");
-        names.add("Москвич");
-        names.add("Жигули");
-        names.add("Мерседес");
-        names.add("Запорожец");
-        names.add("Жигули");
-        System.out.println(findSimilar(names));
+        Collection<String> name = new ArrayList();
+        name.add("Борис");
+        name.add("Григорий");
+        name.add("Василий");
+        name.add("Дмитрий");
+        name.add("Василий");
+        name.add("Дмитрий");
+        name.add("Григорий");
+        name.add("Дмитрий");
+        name.add("Борис");
+        name.add("Василий");
+    System.out.println(findSimilar(name));
     }
 }
 /*
