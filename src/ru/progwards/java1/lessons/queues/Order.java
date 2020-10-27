@@ -8,12 +8,12 @@ public class Order implements Comparable<Order> {
 
     public Order(double sum) {
         this.sum = sum;
-        if (sum>=20000.0) {
-            this.s = 1;
-        } else if (sum>=1000.0) {
+        if (sum >= 20000.0) {
+            this.s = 3;
+        } else if (sum >= 10000.0) {
             this.s = 2;
         } else {
-            this.s = 3;
+            this.s = 1;
         }
         num = auto;
         auto++;
