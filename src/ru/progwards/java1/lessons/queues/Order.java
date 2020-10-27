@@ -4,16 +4,16 @@ public class Order implements Comparable<Order> {
     static int auto = 1;
     private double sum;
     private int num;
-    private int cl;
+    private int s;
 
     public Order(double sum) {
         this.sum = sum;
         if (sum>=20000.0) {
-            this.cl = 3;
+            this.s = 1;
         } else if (sum>=1000.0) {
-            this.cl = 2;
+            this.s = 2;
         } else {
-            this.cl = 1;
+            this.s = 3;
         }
         num = auto;
         auto++;
@@ -29,17 +29,17 @@ public class Order implements Comparable<Order> {
 
     @Override
     public int compareTo(Order o) {
-        if (this.cl>o.cl) {
+        if (this.s > o.s) {
             return -1;
         }
-        if (this.cl<o.cl) {
+        if (this.s < o.s) {
             return 1;
         }
         // если одного класса
-        if (this.num>o.num) {
+        if (this.num > o.num) {
             return 1;
         }
-        if (this.num<o.num) {
+        if (this.num < o.num) {
             return -1;
         }
 

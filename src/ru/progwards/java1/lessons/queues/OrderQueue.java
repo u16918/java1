@@ -15,9 +15,9 @@ public class OrderQueue {
     public static void main(String[] args) {
         OrderQueue num = new OrderQueue();
 
-        num.add(new Order(30000.0));
-        num.add(new Order(11.0));
-        num.add(new Order(15000.0));
+        num.add(new Order(21000.0));
+        num.add(new Order(500.0));
+        num.add(new Order(11000.0));
 
         System.out.println(num.get().getNum());
     }
